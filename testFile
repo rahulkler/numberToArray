@@ -1,0 +1,65 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+#include "NumberToArray.h"
+
+void setup()
+{
+  Serial.begin(9600);
+  lcd.begin(20,4);
+}
+
+void loop() 
+{
+  char toBePrinted1[20] = {};
+  char toBePrinted2[20] = {};
+  char toBePrinted3[20] = {};
+  char toBePrinted4[20] = {};
+  char toBePrinted5[20] = {};
+  char toBePrinted6[20] = {};
+  char toBePrinted7[20] = {};
+  char toBePrinted8[20] = {};
+
+   uint16_t num1 = 65535;
+   lcd.setCursor(0,0);
+   NumberToArray::numberToArray(num1,6,toBePrinted1,0,0,0,0);
+   lcd.print(toBePrinted1);
+   //Since it is uint16_t, the maximum value that supposedly can be stored is 65535.
+
+    uint16_t num2 = 1234;
+    lcd.setCursor(9,0);
+    NumberToArray::numberToArray(num2,7,toBePrinted2,1,1,0,0);
+    lcd.print(toBePrinted2);
+   //Since it is uint16_t, the maximum value that supposedly can be stored is 65535.
+
+    int32_t num3 = 2147483647;
+    lcd.setCursor(5,1);
+    NumberToArray::numberToArray(num3,10,toBePrinted3,0,1,0,0);
+    lcd.print(toBePrinted3);
+
+    int8_t num4 = 123;
+    lcd.setCursor(0,2);
+    NumberToArray::numberToArray(num4,1,toBePrinted4,1,0,0,5);
+    lcd.print(toBePrinted4);
+    //only 1 nAllowedCharacters, but 9 digits are attempted to be displayed. Hence, error. Since displaySign=1, show sign.
+
+    uint16_t num5 = 123;
+    lcd.setCursor(5,2);
+    NumberToArray::numberToArray(num5,1,toBePrinted5,0,0,0,5);
+    lcd.print(toBePrinted5);
+    //only 1 nAllowedCharacters, but 9 digits are attempted to be displayed. Hence, error. Since displaySign=0, show E.
+
+    float num6 = 0;
+    lcd.setCursor(10,2);
+    NumberToArray::numberToArray(num6,10,toBePrinted6,1,1,1,4);
+    lcd.print(toBePrinted6);
+    //dtostr takes in nAlllowedCharacters and rounds off no matter now many digits num5 contains.
+
+    float num7 = -1234.56;
+    lcd.setCursor(0,3);
+    NumberToArray::numberToArray(num7,9,toBePrinted7,0,1,1,2);
+    lcd.print(toBePrinted7);
+
+    lcd.setCursor(10,3);
+    lcd.print("RAHULRAJ");
+}
