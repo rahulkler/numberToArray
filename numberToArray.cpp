@@ -48,12 +48,16 @@ The following are the variables that are used in the functions.
 
 */
 
+
+
 //http://binaryupdates.com/structures-typedef-union-in-c-programming/
 typedef union
 {
   long L;
   float F;
 } LF_t;
+
+
 
 bool NumberToArray::numberToArray(float numberInput, uint8_t nAllowedCharacters, char toBePrinted[], bool displaySign, bool shiftNumbersToRight, bool shiftSignToRight, uint8_t nDecimalPlaces)
 {
@@ -317,6 +321,8 @@ bool NumberToArray::numberToArray(float numberInput, uint8_t nAllowedCharacters,
 
 //The function used to handle double variable types is the same as the function to handle float variable types. Hence, I won't explain the next function.
 
+
+
 bool NumberToArray::numberToArray (double numberInput, uint8_t nAllowedCharacters, char toBePrinted[], bool displaySign, bool shiftNumbersToRight, bool shiftSignToRight, uint8_t nDecimalPlaces)
 {
   uint8_t nMeaningfulCharacters;
@@ -526,6 +532,8 @@ bool NumberToArray::numberToArray (double numberInput, uint8_t nAllowedCharacter
 
   return true;
 }
+
+
 
 bool NumberToArray::numberToArray(int8_t numberInput, uint8_t nAllowedCharacters , char toBePrinted[], bool displaySign, bool shiftNumbersToRight, bool shiftSignToRight, uint8_t nDecimalPlaces)
 {
@@ -823,6 +831,8 @@ uint32_t -> ultoa()
 
 */
 
+
+
 bool NumberToArray::numberToArray (int16_t numberInput, uint8_t nAllowedCharacters , char toBePrinted[], bool displaySign, bool shiftNumbersToRight, bool shiftSignToRight, uint8_t nDecimalPlaces)
 {
   uint8_t nMeaningfulCharacters;
@@ -1053,6 +1063,7 @@ bool NumberToArray::numberToArray (int16_t numberInput, uint8_t nAllowedCharacte
 
   return true;
 }
+
 
 
 bool NumberToArray::numberToArray (int32_t numberInput, uint8_t nAllowedCharacters , char toBePrinted[], bool displaySign, bool shiftNumbersToRight, bool shiftSignToRight, uint8_t nDecimalPlaces)
@@ -1288,6 +1299,8 @@ bool NumberToArray::numberToArray (int32_t numberInput, uint8_t nAllowedCharacte
   return true;
 }
 
+
+
 bool NumberToArray::numberToArray (uint8_t numberInput, uint8_t nAllowedCharacters , char toBePrinted[], bool displaySign, bool shiftNumbersToRight, bool shiftSignToRight, uint8_t nDecimalPlaces)
 {
   uint8_t nMeaningfulCharacters;
@@ -1518,6 +1531,7 @@ bool NumberToArray::numberToArray (uint8_t numberInput, uint8_t nAllowedCharacte
 
   return true;
 }
+
 
 
 bool NumberToArray::numberToArray(uint16_t numberInput, uint8_t nAllowedCharacters , char toBePrinted[], bool displaySign, bool shiftNumbersToRight, bool shiftSignToRight, uint8_t nDecimalPlaces)
@@ -1751,6 +1765,8 @@ bool NumberToArray::numberToArray(uint16_t numberInput, uint8_t nAllowedCharacte
 
   return true;
 }
+
+
 
 bool NumberToArray::numberToArray(uint32_t numberInput, uint8_t nAllowedCharacters , char toBePrinted[], bool displaySign, bool shiftNumbersToRight, bool shiftSignToRight, uint8_t nDecimalPlaces)
 {
